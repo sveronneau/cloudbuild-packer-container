@@ -5,12 +5,12 @@ From CLOUD SHELL or your local SDK or a Build Trigger in Cloud Build.
 Clone this repo:<br>
 $ git clone https://github.com/sveronneau/cloudbuild-packer-container
 
-Go to the directory that has the source code for the packer Docker image:<br>
+Go to the cloned repo directory:<br>
 $ cd cloudbuild-packer-container
 
 <b>Make sure you have a secret setup in Secret Manager that contains the JSON value of a Service Account with Project Editor role.</b><br>
 
-Build the Docker image via Cloud Build:<br>
+Launch the cloud Build job:<br>
 $ gcloud builds submit --config cloudbuild.yaml .
 
 # VARIABLES<br>
