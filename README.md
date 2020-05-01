@@ -8,8 +8,9 @@ $ git clone https://github.com/sveronneau/cloudbuild-packer-container
 Go to the directory that has the source code for the packer Docker image:<br>
 $ cd cloudbuild-packer-container
 
-Build the Docker image via Cloud Build:<br>
 <b>Make sure you have a secret setup in Secret Manager that contains the JSON value of a Service Account with Project Editor role.</b><br>
+
+Build the Docker image via Cloud Build:<br>
 $ gcloud builds submit --config cloudbuild.yaml .
 
 # VARIABLES<br>
