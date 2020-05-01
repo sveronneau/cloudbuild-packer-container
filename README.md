@@ -13,6 +13,11 @@ $ gcloud builds submit --config cloudbuild.yaml .
 
 # VARIABLES<br>
 <b>Dockerfile:</b><br>
-FROM alpine:<i>version</i>
+FROM alpine:<i>version</i><br>
 ARG PACKER_VERSION=<i>Packer version</i><br>
 ARG PACKER_VERSION_SHA256SUM=<i>SHA256SUM value from https://releases.hashicorp.com/packer/x.x.x/packer_x.x.x_SHA256SUMS</i>
+
+<b>cloudbuild.yml</b><br>
+_PACKER_VERSION:<i>Same as Dockerfile</i><br>
+_PACKER_VERSION_SHA256SUM: <i>Same as Dockerfile</i><br>
+SECRET_MANAGER_NAME: <i>Name of the secret you created in GCP Secret Manager</i>
