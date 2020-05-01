@@ -1,6 +1,6 @@
 # Quick GCP Cloud Build CI pipeline to makes a Packer Docker Registry artifact in GCR.IO then builds a GCE Golden Image via Packer with Vault binary installed.
 
-From CLOUD SHELL or your local SDK
+From CLOUD SHELL or your local SDK or a Build Trigger in Cloud Build.
 
 Clone this repo:<br>
 $ git clone https://github.com/sveronneau/cloudbuild-packer-container
