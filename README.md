@@ -9,6 +9,7 @@ Go to the directory that has the source code for the packer Docker image:<br>
 $ cd cloudbuild-packer-container
 
 Build the Docker image via Cloud Build:<br>
+Make sure you have a secret setup in Secret Manager that contains the JSON value of a Service Account with Project Editor role.<br>
 $ gcloud builds submit --config cloudbuild.yaml .
 
 # VARIABLES<br>
@@ -21,3 +22,4 @@ ARG PACKER_VERSION_SHA256SUM=<i>SHA256SUM value from https://releases.hashicorp.
 _PACKER_VERSION:<i>Same as Dockerfile</i><br>
 _PACKER_VERSION_SHA256SUM: <i>Same as Dockerfile</i><br>
 SECRET_MANAGER_NAME: <i>Name of the secret you created in GCP Secret Manager</i>
+
