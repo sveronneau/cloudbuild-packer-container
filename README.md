@@ -1,4 +1,4 @@
-# Quick GCP Cloud Build CI pipeline to makes a Packer Docker Registry artifact in GCR.IO then builds a GCE Golden Image via Packer with Vault binary installed.
+# Quick GCP Cloud Build CI pipeline to makes a Packer Docker artifact in GCR.IO which then builds a GCE Golden Image Disk via Packer with HasiCorp Vault binary installed.
 
 From CLOUD SHELL or your local SDK or a Build Trigger in Cloud Build.
 
