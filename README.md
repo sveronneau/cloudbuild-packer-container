@@ -1,8 +1,4 @@
-Quick pipeline to make a golden image via Packer (binary stored in gcr.io)
-
-PACKER IMAGE
-
-To use Packer from Google Cloud Build, you need to build an image with Packer installed.
+Quick GCP Cloud Build CI pipeline to make a Packer Docker Registry artifact in GCR.IO
 
 From CLOUD SHELL or your local SDK
 
