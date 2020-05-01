@@ -16,8 +16,3 @@ $ gcloud builds submit --config cloudbuild.yaml .
 FROM alpine:<i>version</i>
 ARG PACKER_VERSION=<i>Packer version</i><br>
 ARG PACKER_VERSION_SHA256SUM=<i>SHA256SUM value from https://releases.hashicorp.com/packer/x.x.x/packer_x.x.x_SHA256SUMS</i>
-
-substitutions:
-  _PACKER_VERSION: 1.5.5
-  _PACKER_VERSION_SHA256SUM: 07f28a1a033f4bcd378a109ec1df6742ac604e7b122d0316d2cddb3c2f6c24d1
-
