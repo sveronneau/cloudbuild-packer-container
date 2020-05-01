@@ -11,16 +11,6 @@ steps:
         '--build-arg', 'PACKER_VERSION=${_PACKER_VERSION}',
         '--build-arg', 'PACKER_VERSION_SHA256SUM=${_PACKER_VERSION_SHA256SUM}',
         '.']
-substitutions:
-  _PACKER_VERSION: 1.5.5
-  _PACKER_VERSION_SHA256SUM: 07f28a1a033f4bcd378a109ec1df6742ac604e7b122d0316d2cddb3c2f6c24d1
-
-images:
-- 'gcr.io/$PROJECT_ID/packer:latest'
-- 'gcr.io/$PROJECT_ID/packer:$_PACKER_VERSION'
-tags: ['cloud-builders-community']
-
-steps:
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: 'bash'
   args: [ '-c', 'mkdir ~/.config ; mkdir ~/.config/gcloud ; gcloud secrets versions access latest --secret=cloudbuild-sa > ~/.config/gcloud/application_default_credentials.json' ]
@@ -31,4 +21,13 @@ steps:
   - -var
   - project_id=$PROJECT_ID
   - packer.json
+tags: ['cloud-builders-community']
+  
+substitutions:
+  _PACKER_VERSION: 1.5.5
+  _PACKER_VERSION_SHA256SUM: 07f28a1a033f4bcd378a109ec1df6742ac604e7b122d0316d2cddb3c2f6c24d1
+
+images:
+- 'gcr.io/$PROJECT_ID/packer:latest'
+- 'gcr.io/$PROJECT_ID/packer:$_PACKER_VERSION'
 tags: ['cloud-builders-community']
