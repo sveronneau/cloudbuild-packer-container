@@ -5,15 +5,23 @@
 steps:
 - name: 'gcr.io/cloud-builders/wget'
   args: ["https://releases.hashicorp.com/packer/${_PACKER_VERSION}/packer_${_PACKER_VERSION}_linux_amd64.zip"]
+  id: 'fetch-packer'
+  
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/packer:${_PACKER_VERSION}',
         '-t', 'gcr.io/$PROJECT_ID/packer',
         '--build-arg', 'PACKER_VERSION=${_PACKER_VERSION}',
         '--build-arg', 'PACKER_VERSION_SHA256SUM=${_PACKER_VERSION_SHA256SUM}',
         '.']
+  waitFor: ['fetch-packer']
+  id: 'build-docker-packer'      
+  
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: 'bash'
   args: [ '-c', 'mkdir ~/.config ; mkdir ~/.config/gcloud ; gcloud secrets versions access latest --secret=cloudbuild-sa > ~/.config/gcloud/application_default_credentials.json' ]
+  waitFor: ['fetch-packer', 'build-docker-packer']
+  id: 'get-gcp-serviceaccount'
+
 - name: 'gcr.io/$PROJECT_ID/packer'
   args:
   - build
@@ -21,6 +29,8 @@ steps:
   - -var
   - project_id=$PROJECT_ID
   - packer.json
+  waitFor: ['fetch-packer', 'build-docker-packer', 'get-gcp-serviceaccount']
+  id: 'build-goldenimage'
 tags: ['cloud-builders-community']
   
 substitutions:
