@@ -6,7 +6,7 @@ From CLOUD SHELL or your local SDK or a Build Trigger in Cloud Build.
 $ git clone https://github.com/sveronneau/cloudbuild-packer-container <br>
 $ cd cloudbuild-packer-container
 
-<b>Mandatory</b><br>
+<b>Mandatory:</b><br>
 * Make sure you have a secret setup in Secret Manager that contains the JSON value of a Service Account with Project Editor role.<br>
 * Update the <i>Variables</i> to fit your requirements.
 
