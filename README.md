@@ -13,7 +13,10 @@ $ cd cloudbuild-packer-container
 Launch the cloud Build job:<br>
 $ gcloud builds submit --config cloudbuild.yaml .
 
-# VARIABLES<br>
+# Service Account and Secret Manager<br>
+Abc123
+
+# Variables<br>
 <b>Dockerfile:</b><br>
 FROM alpine:<i>version</i><br>
 ARG PACKER_VERSION=<i>Packer version</i><br>
