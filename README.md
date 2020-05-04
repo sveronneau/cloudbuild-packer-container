@@ -3,9 +3,7 @@
 From CLOUD SHELL or your local SDK or a Build Trigger in Cloud Build.
 
 <b>Clone this repo:</b><br>
-$ git clone https://github.com/sveronneau/cloudbuild-packer-container
-
-Go to the cloned repo directory:<br>
+$ git clone https://github.com/sveronneau/cloudbuild-packer-container <br>
 $ cd cloudbuild-packer-container
 
 <b>Mandatory</b><br>
