@@ -22,10 +22,14 @@
         "uname -a >> ~/sysinfo.txt",
         "sudo apt-get update",
         "sudo apt-get install -y unzip",
-        "wget https://releases.hashicorp.com/packer/{{user `packer`}}/packer_{{user `packer`}}_linux_amd64.zip",
-        "unzip packer_{{user `packer`}}_linux_amd64.zip",
-        "mv packer /usr/local/bin/",
-        "rm -f packer_{{user `packer`}}_linux_amd64.zip"
+        "wget https://releases.hashicorp.com/vault/{{user `vault`}}/vault_{{user `vault`}}_linux_amd64.zip",        
+        "unzip vault_{{user `vault`}}_linux_amd64.zip",
+        "mv vault /usr/local/bin/",
+        "rm -f vault_{{user `vault`}}_linux_amd64.zip",
+        "wget https://releases.hashicorp.com/consul/{{user `consul`}}/consul_{{user `consul`}}_linux_amd64.zip",        
+        "unzip consul_{{user `consul`}}_linux_amd64.zip",
+        "mv consul /usr/local/bin/",
+        "rm -f consul_{{user `consul`}}_linux_amd64.zip"
       ]
     }
   ],
@@ -35,6 +39,7 @@
     "region": "northamerica-northeast1",
     "source_image_family": "ubuntu-2004-lts",
     "zone": "northamerica-northeast1-c",
-    "packer": "1.5.5"
+    "vault": "1.4.0",
+    "consul": "1.7.2"
   }
 }
