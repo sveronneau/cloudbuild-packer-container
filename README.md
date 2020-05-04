@@ -24,3 +24,5 @@ _PACKER_VERSION:<i>Same as Dockerfile</i><br>
 _PACKER_VERSION_SHA256SUM: <i>Same as Dockerfile</i><br>
 SECRET_MANAGER_NAME: <i>Name of the secret you created in GCP Secret Manager</i>
 
+<packer.json</b><br>
+ "packer": "<i>Packer version</i>"
