@@ -17,10 +17,10 @@
   ],
   "provisioners": [
     {
-      "inline": [
-        "uname -a >> ~/sysinfo.txt"
-      ],
-      "type": "shell"
+      "type": "shell",
+      "inline": ["uname -a >> ~/sysinfo.txt"],
+      "inline": ["wget https://releases.hashicorp.com/packer/{{user `packer`}}/packer_{{user `packer`}}_linux_amd64.zip"],
+      "inline": ["unzip packer_{{user `packer`}}_linux_amd64.zip"],
     }
   ],
   "variables": {
@@ -28,6 +28,7 @@
     "project_id": "{{env `PROJECT_ID`}}",
     "region": "northamerica-northeast1",
     "source_image_family": "ubuntu-2004-lts",
-    "zone": "northamerica-northeast1-c"
+    "zone": "northamerica-northeast1-c",
+    "packer": "1.5.5"
   }
 }
