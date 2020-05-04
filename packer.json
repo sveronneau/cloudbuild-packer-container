@@ -20,7 +20,7 @@
       "type": "shell",
       "inline": ["uname -a >> ~/sysinfo.txt"],
       "inline": ["wget https://releases.hashicorp.com/packer/{{user `packer`}}/packer_{{user `packer`}}_linux_amd64.zip"],
-      "inline": ["unzip packer_{{user `packer`}}_linux_amd64.zip"],
+      "inline": ["unzip packer_{{user `packer`}}_linux_amd64.zip"]
     }
   ],
   "variables": {
