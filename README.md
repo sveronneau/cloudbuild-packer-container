@@ -8,8 +8,8 @@ $ git clone https://github.com/sveronneau/cloudbuild-packer-container
 Go to the cloned repo directory:<br>
 $ cd cloudbuild-packer-container
 
-<b>Make sure you have a secret setup in Secret Manager that contains the JSON value of a Service Account with Project Editor role.</b><br>
-<b>Update the <i>Variables</i> to fit your requirements.</b>
+*<b>Make sure you have a secret setup in Secret Manager that contains the JSON value of a Service Account with Project Editor role.</b><br>
+*<b>Update the <i>Variables</i> to fit your requirements.</b>
 
 Launch the cloud Build job:<br>
 $ gcloud builds submit --config cloudbuild.yaml .
