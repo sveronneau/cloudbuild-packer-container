@@ -23,7 +23,9 @@
         "sudo apt-get update",
         "sudo apt-get install -y unzip",
         "wget https://releases.hashicorp.com/packer/{{user `packer`}}/packer_{{user `packer`}}_linux_amd64.zip",
-        "unzip packer_{{user `packer`}}_linux_amd64.zip"
+        "unzip packer_{{user `packer`}}_linux_amd64.zip",
+        "mv packer /usr/local/bin/",
+        "rm -f packer_{{user `packer`}}_linux_amd64.zip"
       ]
     }
   ],
