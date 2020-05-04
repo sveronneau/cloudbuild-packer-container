@@ -8,7 +8,7 @@ $ git clone https://github.com/sveronneau/cloudbuild-packer-container
 Go to the cloned repo directory:<br>
 $ cd cloudbuild-packer-container
 
-# Mandatory<br>
+<b>Mandatory</b><br>
 * Make sure you have a secret setup in Secret Manager that contains the JSON value of a Service Account with Project Editor role.<br>
 * Update the <i>Variables</i> to fit your requirements.
 
