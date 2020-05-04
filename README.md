@@ -15,7 +15,8 @@ Launch the cloud Build job:<br>
 $ gcloud builds submit --config cloudbuild.yaml .
 
 # Setting up a Service Account and Secret Manager<br>
-Abc123
+* In GCP, go to https://console.cloud.google.com/iam-admin/serviceaccounts and create a Service Account with Project Editor role.  Then create a key and download the JSON version.<br>
+* in GCP, go to https://console.cloud.google.com/security/secret-manager and create a secret and upload the JSON file from the previous step for content.
 
 # Variables<br>
 <b>Dockerfile:</b><br>
