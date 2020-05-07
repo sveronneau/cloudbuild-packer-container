@@ -1,6 +1,6 @@
 # Quick GCP Cloud Build CI pipeline to makes a Packer Docker artifact in GCR.IO which then builds a GCE Golden Image Disk via Packer with HasiCorp Vault binary installed.
 
-From CLOUD SHELL or your local SDK or a Build Trigger in Cloud Build.
+From CLOUD SHELL or your local SDK or a Build Trigger (Check PNG file) in Cloud Build.
 
 <b>Clone this repo:</b><br>
 $ git clone https://github.com/sveronneau/cloudbuild-packer-container <br>
@@ -9,6 +9,14 @@ $ cd cloudbuild-packer-container
 <b>Mandatory:</b><br>
 * Make sure you have a secret setup in Secret Manager that contains the JSON value of a Service Account with Project Editor role.<br>
 * Update the <i>Variables</i> to fit your requirements.
+
+<b>Enable the Cloud Build API:</b><br>
+* Go in CloudBuild UI and enable it https://console.cloud.google.com/cloud-build <br>
+
+<b>Make sure the CloudBuil service account something@cloudbuild.gserviceaccount.com as the folowing roles:</br></b>
+* Cloud Build Service Account<br>
+* Compute Admin<br>
+* Secret Manager Secret Accessor
 
 <b>Launch the cloud Build job:</b><br>
 $ gcloud builds submit --config cloudbuild.yaml .
