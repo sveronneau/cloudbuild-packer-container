@@ -28,7 +28,7 @@ steps:
   - -debug
   - -var
   - project_id=$PROJECT_ID
-  - packer.json
+  - vault-consul.json
   waitFor: ['fetch-packer', 'build-docker-image', 'get-serviceaccount']
   id: 'build-vault-golden-image'
 tags: ['cloud-builders-community']
