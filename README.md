@@ -38,4 +38,3 @@ SECRET_MANAGER_NAME: <i>Name of the secret you created in GCP Secret Manager</i>
 
 <b>packer.json</b><br>
  "vault": "<i>Vault version</i>"<br>
- "consul": "<i>Consul version</i>"
