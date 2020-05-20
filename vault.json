@@ -5,9 +5,9 @@
     "zone": "northamerica-northeast1-c",
     "vault_version": "1.4.1",
     "vault_download_url": "https://releases.hashicorp.com/vault/1.4.1/vault_1.4.1_linux_amd64.zip",
-    "ca_public_key_path": "/home/stacy/cloudbuild-packer-container/tls/ca.crt.pem",
-    "tls_public_key_path": "/home/stacy/cloudbuild-packer-container/tls/vault.crt.pem",
-    "tls_private_key_path": "/home/stacy/cloudbuild-packer-container/tls/vault.key.pem"
+    "ca_public_key_path": "tls/ca.crt.pem",
+    "tls_public_key_path": "tls/vault.crt.pem",
+    "tls_private_key_path": "tls/vault.key.pem"
   },
   "builders": [{
     "name": "ubuntu18-image",
