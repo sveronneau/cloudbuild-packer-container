@@ -4,7 +4,6 @@
     "project_id": "tj4h-common",
     "zone": "northamerica-northeast1-c",
     "vault_version": "1.4.1",
-    "vault_download_url": "https://releases.hashicorp.com/vault/1.4.1/vault_1.4.1_linux_amd64.zip",
     "ca_public_key_path": "tls/ca.crt.pem",
     "tls_public_key_path": "tls/vault.crt.pem",
     "tls_private_key_path": "tls/vault.key.pem"
@@ -38,11 +37,7 @@
   },{
     "type": "shell",
     "inline": [
-      "if test -n \"{{user `vault_download_url`}}\"; then",
-      " /tmp/terraform-google-vault/modules/install-vault/install-vault --download-url {{user `vault_download_url`}};",
-      "else",
       " /tmp/terraform-google-vault/modules/install-vault/install-vault --version {{user `vault_version`}};",
-      "fi",
       "sudo cp /tmp/terraform-google-vault/modules/config/* /vault/config/"
     ]
   },{
