@@ -37,7 +37,7 @@
   },{
     "type": "shell",
     "inline": [
-      "/tmp/terraform-google-vault/modules/install-vault/install-vault --version {{user `vault_version`}};",
+      "sudo /tmp/terraform-google-vault/modules/install-vault/install-vault --version {{user `vault_version`}};",
       "sudo cp /tmp/terraform-google-vault/modules/config/* /opt/vault/config/"
     ]
   },{
