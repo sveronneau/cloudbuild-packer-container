@@ -35,15 +35,15 @@
     ]
   },{
     "type": "file",
-    "source": {{user `local.ca_public_key_path`}},
+    "source": "{{user `local.ca_public_key_path`}}",
     "destination": "/tmp/ca.crt.pem"
   },{
     "type": "file",
-    "source": {{user `local.tls_public_key_path`}},
+    "source": "{{user `local.tls_public_key_path`}}",
     "destination": "/tmp/vault.crt.pem"
   },{
     "type": "file",
-    "source": {{user `local.tls_private_key_path`}},
+    "source": "{{user `local.tls_private_key_path`}}",
     "destination": "/tmp/vault.key.pem"
   },{
     "type": "shell",
