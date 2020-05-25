@@ -7,8 +7,7 @@ Managed Instance Group using the [vault-cluster module](https://github.com/hashi
 
 This script has been tested on the following operating systems:
 
-* Ubuntu 16.04
-* Ubuntu 18.04
+* Ubuntu 20.04 LTS
 
 There is a good chance it will work on other flavors of Debian as well.
 
@@ -21,7 +20,7 @@ for all available tags) and run the `install-vault` script:
 
 ```
 git clone --branch <VERSION> https://github.com/hashicorp/terraform-google-vault.git
-terraform-google-vault/modules/install-vault/install-vault --version 0.5.4
+terraform-google-vault/modules/install-vault/install-vault --version 1.4.2
 ```
 
 The `install-vault` script will install Vault, its dependencies, and the [run-vault script](https://github.com/hashicorp/terraform-google-vault/tree/master/modules/run-vault).
@@ -47,7 +46,7 @@ The `install-vault` script accepts the following arguments:
 Example:
 
 ```
-install-vault --version 0.8.2
+install-vault --version 01.4.2
 ```
 
 
