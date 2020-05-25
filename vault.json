@@ -1,19 +1,11 @@
 {
   "min_packer_version": "1.5.6",
-  "variables": {
-    "project_id": "tj4h-common",
-    "zone": "northamerica-northeast1-c",
-    "vault_version": "1.4.2",
-    "ca_public_key_path": "tls/ca.crt.pem",
-    "tls_public_key_path": "tls/vault.crt.pem",
-    "tls_private_key_path": "tls/vault.key.pem"
-  },
   "builders": [{
     "name": "ubuntu20-image",
     "type": "googlecompute",
-    "project_id": "{{user `project_id`}}",
+    "project_id": local.project_id,
     "source_image_family": "ubuntu-2004-lts",
-    "zone": "{{user `zone`}}",
+    "zone": local.vault_version,
     "image_name": "vault14-ubuntu20-{{isotime \"2006-01-02-030405\"}}",
     "image_family": "vault14",
     "ssh_username": "root",
@@ -38,20 +30,20 @@
     "type": "shell",
     "inline": [
       "chmod -R 777 /tmp/terraform-google-vault/",
-      "/tmp/terraform-google-vault/modules/install-vault/install-vault --version {{user `vault_version`}};",
+      "/tmp/terraform-google-vault/modules/install-vault/install-vault --version {{local.vault_version}};",
       "sudo cp /tmp/terraform-google-vault/modules/config/* /opt/vault/config/"
     ]
   },{
     "type": "file",
-    "source": "{{user `ca_public_key_path`}}",
+    "source": local.ca_public_key_path,
     "destination": "/tmp/ca.crt.pem"
   },{
     "type": "file",
-    "source": "{{user `tls_public_key_path`}}",
+    "source": local.tls_public_key_path,
     "destination": "/tmp/vault.crt.pem"
   },{
     "type": "file",
-    "source": "{{user `tls_private_key_path`}}",
+    "source": local.tls_private_key_path,
     "destination": "/tmp/vault.key.pem"
   },{
     "type": "shell",
