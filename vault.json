@@ -51,7 +51,7 @@
     "destination": "/tmp/vault.crt.pem"
   },{
     "type": "file",
-    "source": "source": "{{user `tls_private_key_path`}}",
+    "source": "{{user `tls_private_key_path`}}",
     "destination": "/tmp/vault.key.pem"
   },{
     "type": "shell",
