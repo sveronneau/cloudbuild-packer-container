@@ -30,7 +30,7 @@
     "type": "shell",
     "inline": [
       "chmod -R 777 /tmp/terraform-google-vault/",
-      "/tmp/terraform-google-vault/modules/install-vault/install-vault --version {{local.vault_version}};",
+      "/tmp/terraform-google-vault/modules/install-vault/install-vault --version {{user `local.vault_version`}};",
       "sudo cp /tmp/terraform-google-vault/modules/config/* /opt/vault/config/"
     ]
   },{
