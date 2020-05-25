@@ -1,11 +1,19 @@
 {
   "min_packer_version": "1.5.6",
+  "variables": {
+    "project_id": "tj4h-common",
+    "zone": "northamerica-northeast1-c",
+    "vault_version": "1.4.2",
+    "ca_public_key_path": "tls/ca.crt.pem",
+    "tls_public_key_path": "tls/vault.crt.pem",
+    "tls_private_key_path": "tls/vault.key.pem"
+  },  
   "builders": [{
     "name": "ubuntu20-image",
     "type": "googlecompute",
-    "project_id": "local.project_id",
+    "project_id": "{{user `project_id`}}",
     "source_image_family": "ubuntu-2004-lts",
-    "zone": "local.vault_version",
+    "zone": "{{user `zone`}}",
     "image_name": "vault14-ubuntu20-{{isotime \"2006-01-02-030405\"}}",
     "image_family": "vault14",
     "ssh_username": "root",
@@ -35,15 +43,15 @@
     ]
   },{
     "type": "file",
-    "source": "{{user `local.ca_public_key_path`}}",
+    "source": "{{user `ca_public_key_path`}}",
     "destination": "/tmp/ca.crt.pem"
   },{
     "type": "file",
-    "source": "{{user `local.tls_public_key_path`}}",
+     "source": "{{user `tls_public_key_path`}}",
     "destination": "/tmp/vault.crt.pem"
   },{
     "type": "file",
-    "source": "{{user `local.tls_private_key_path`}}",
+    "source": "source": "{{user `tls_private_key_path`}}",
     "destination": "/tmp/vault.key.pem"
   },{
     "type": "shell",
