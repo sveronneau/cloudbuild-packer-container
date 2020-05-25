@@ -46,7 +46,7 @@ The `install-vault` script accepts the following arguments:
 Example:
 
 ```
-install-vault --version 01.4.2
+install-vault --version 1.4.2
 ```
 
 
