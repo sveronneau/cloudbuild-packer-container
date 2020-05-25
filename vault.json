@@ -3,9 +3,9 @@
   "builders": [{
     "name": "ubuntu20-image",
     "type": "googlecompute",
-    "project_id": local.project_id,
+    "project_id": "local.project_id",
     "source_image_family": "ubuntu-2004-lts",
-    "zone": local.vault_version,
+    "zone": "local.vault_version",
     "image_name": "vault14-ubuntu20-{{isotime \"2006-01-02-030405\"}}",
     "image_family": "vault14",
     "ssh_username": "root",
@@ -35,15 +35,15 @@
     ]
   },{
     "type": "file",
-    "source": local.ca_public_key_path,
+    "source": "local.ca_public_key_path",
     "destination": "/tmp/ca.crt.pem"
   },{
     "type": "file",
-    "source": local.tls_public_key_path,
+    "source": "local.tls_public_key_path",
     "destination": "/tmp/vault.crt.pem"
   },{
     "type": "file",
-    "source": local.tls_private_key_path,
+    "source": "local.tls_private_key_path",
     "destination": "/tmp/vault.key.pem"
   },{
     "type": "shell",
