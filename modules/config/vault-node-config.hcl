@@ -20,3 +20,4 @@ seal "gcpckms" {
 disable_mlock = true
 api_addr = "http://_HOSTNAME:8200"
 cluster_addr = "http://_HOSTNAME:8201"
+ui = true
