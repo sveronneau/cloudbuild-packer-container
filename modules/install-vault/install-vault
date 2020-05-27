@@ -2,8 +2,7 @@
 # This script can be used to install Vault and its dependencies. This script has been tested with the following
 # operating systems:
 #
-# 1. Ubuntu 16.04
-# 2. Ubuntu 18.04
+# 1. Ubuntu 20.04
 
 set -e
 
@@ -39,7 +38,7 @@ function print_usage {
   echo
   echo "Example:"
   echo
-  echo "  install-vault --version 0.10.4"
+  echo "  install-vault --version 1.4.2"
 }
 
 function log {
