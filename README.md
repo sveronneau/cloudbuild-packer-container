@@ -37,4 +37,10 @@ _PACKER_VERSION_SHA256SUM: <i>Same as Dockerfile</i><br>
 SECRET_MANAGER_NAME: <i>Name of the secret you created in GCP Secret Manager</i>
 
 <b>vault.json</b><br>
- "vault": "<i>Vault version</i>"<br>
+ "vault": "<i>Vault version</i>"
+ 
+<b>modules/config/vault-node-config.hcl</b><br>
+project = <i>GCP Project_ID of GCP KMS</i><br>
+Zone = <i>Zone of GCP KMS</i><br>
+key_ring = <i>KMS Keyring</i><br>
+crypto_key = <i>KMS Key</i>
