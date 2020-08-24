@@ -22,16 +22,16 @@ steps:
   waitFor: ['fetch-packer', 'build-docker-image']
   id: 'get-serviceaccount'
 
-#- name: 'gcr.io/$PROJECT_ID/packer'
-#  args:
-#  - build
-#  - -debug
-#  - -var
-#  - project_id=$PROJECT_ID
-#  - vault.json
-#  waitFor: ['fetch-packer', 'build-docker-image', 'get-serviceaccount']
-#  id: 'build-vault-golden-image'
-#tags: ['cloud-builders-community']
+- name: 'gcr.io/$PROJECT_ID/packer'
+  args:
+  - build
+  - -debug
+  - -var
+  - project_id=$PROJECT_ID
+  - vault.json
+  waitFor: ['fetch-packer', 'build-docker-image', 'get-serviceaccount']
+  id: 'build-vault-golden-image'
+tags: ['cloud-builders-community']
   
 substitutions:
   _PACKER_VERSION: 1.6.1
