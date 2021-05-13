@@ -18,7 +18,8 @@
     "image_family": "vault14",
     "ssh_username": "root",
     "disk_size": "100",
-    "disk_type": "pd-ssd"
+    "disk_type": "pd-ssd",
+    "subnetwork": "chatbot-sandbox-tj4h-sn1"
 
   }],
   "provisioners": [{
