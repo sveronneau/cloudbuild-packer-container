@@ -18,7 +18,7 @@ steps:
   
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: 'bash'
-  args: [ '-c', 'mkdir ~/.config ; mkdir ~/.config/gcloud ; gcloud secrets versions access latest --secret=${_SECRET_MANAGER_NAME} --secret=${_SECRET_MANAGER_PROJECT} > ~/.config/gcloud/application_default_credentials.json' ]
+  args: [ '-c', 'mkdir ~/.config ; mkdir ~/.config/gcloud ; gcloud secrets versions access latest --secret=${_SECRET_MANAGER_NAME} --project=${_SECRET_MANAGER_PROJECT} > ~/.config/gcloud/application_default_credentials.json' ]
   waitFor: ['fetch-packer', 'build-docker-image']
   id: 'get-serviceaccount'
 
