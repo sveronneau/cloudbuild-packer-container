@@ -11,9 +11,9 @@ listener "tcp" {
 
 seal "gcpckms" {
   credentials = "/opt/vault/config/sa-kms-unseal.json"
-  project     = "tj4h-common"
+  project     = "secrets-kms-tj4h"
   region      = "northamerica-northeast1"
-  key_ring    = "vault-keyring"
+  key_ring    = "vault-kr"
   crypto_key  = "vault-key"
 }
 
