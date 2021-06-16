@@ -34,9 +34,9 @@ steps:
 tags: ['cloud-builders-community']
   
 substitutions:
-  _PACKER_VERSION: 1.6.1
-  _PACKER_VERSION_SHA256SUM: 8dcf97610e8c3907c23e25201dce20b498e1939e89878dec01de6975733c7729
-  _SECRET_MANAGER_NAME: cloudbuild-sa
+  _PACKER_VERSION: 1.7.3
+  _PACKER_VERSION_SHA256SUM: 1a8719f0797e9e45abd98d2eb38099b09e5566ec212453052d2f21facc990c73
+  _SECRET_MANAGER_NAME: packer-sa
   
 images:
 - 'gcr.io/$PROJECT_ID/packer:latest'
