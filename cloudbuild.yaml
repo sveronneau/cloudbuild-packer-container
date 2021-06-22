@@ -24,7 +24,7 @@ steps:
 
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: 'bash'
-  args: [ '-c', 'pwd ; ls -al modules/config ; cp -f ~/.config/gcloud/application_default_credentials.json /workspace/modules/config/sa-kms-unseal.json ; ls -al modules/config' ]
+  args: [ '-c', 'cp -f ~/.config/gcloud/application_default_credentials.json /workspace/modules/config/sa-kms-unseal.json' ]
   waitFor: ['fetch-packer', 'build-docker-image', 'get-serviceaccount']
   id: 'get-unseal-serviceaccount'
   
